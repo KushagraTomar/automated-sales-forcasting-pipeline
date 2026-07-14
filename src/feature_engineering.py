@@ -27,10 +27,14 @@ def add_lag_and_rolling_features(df: pd.DataFrame, lags=None, windows=None) -> p
 
     for window in windows:
         df[f"rolling_mean_{window}"] = (
-            df.groupby(["store", "item"])["sales"].transform(lambda s: s.rolling(window, min_periods=window).mean())
+            df.groupby(["store", "item"])["sales"]
+                .transform(lambda s: s.rolling(window, min_periods=window)
+                    .mean())
         )
         df[f"rolling_std_{window}"] = (
-            df.groupby(["store", "item"])["sales"].transform(lambda s: s.rolling(window, min_periods=window).std())
+            df.groupby(["store", "item"])["sales"]
+                .transform(lambda s: s.rolling(window, min_periods=window)
+                    .std())
         )
 
     return df
