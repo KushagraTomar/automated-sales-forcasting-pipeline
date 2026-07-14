@@ -32,9 +32,7 @@ def train_model(X_train: pd.DataFrame, y_train: pd.Series, params: Dict[str, Any
     mlflow.set_experiment("sales-forecasting")
     run_name = f"baseline_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     with mlflow.start_run(run_name=run_name) as run:
-        # grid_params = {f"grid_{k}": str(v) for k, v in params.items()}
-        # mlflow.log_params(grid_params)
-        # Log the best parameters found
+
         mlflow.log_params(best_params)
         mlflow.log_metric("mae", mae)
         mlflow.log_metric("r2_score", r2s)
