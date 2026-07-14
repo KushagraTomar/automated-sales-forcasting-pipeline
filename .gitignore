@@ -3,6 +3,4 @@
 /data
 /mlflow.db
 /requirements.txt
-/src
-!/src/train.py
 /venv
