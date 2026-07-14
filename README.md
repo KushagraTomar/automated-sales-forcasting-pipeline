@@ -1,6 +1,6 @@
 # Automated Sales Forecasting Pipeline
 
-This project implements the idea discussed in the shared Claude conversation: an automated sales forecasting pipeline using XGBoost, MLflow, and Airflow.
+This project implements an automated sales forecasting pipeline using XGBoost, MLflow, and Airflow.
 
 ## Goal
 
